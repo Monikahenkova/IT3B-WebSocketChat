@@ -20,5 +20,8 @@ namespace IT3B_Chat.Client
   {
    InitializeComponent();
   }
- }
+        private void SendMessage_Click(object sender, RoutedEventArgs e)
+        {
+        }
+    }
 }

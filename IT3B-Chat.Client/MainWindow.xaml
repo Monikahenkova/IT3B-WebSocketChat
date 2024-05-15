@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT3B_Chat.Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WebSocket Client" Height="450" Width="800" Background="#7D26CD">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
+        <!-- TextBox pro zobrazení zpráv od serveru -->
+        <TextBox x:Name="serverMessagesTextBox" Grid.Row="0" Margin="10" Background="White" Foreground="Black" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="messageTextBox" Width="600" Background="White" Foreground="Black" />
+            <Button Content="Odeslat" Click="SendMessage_Click" Background="White" Foreground="Black" />
+        </StackPanel>
     </Grid>
 </Window>

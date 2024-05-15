@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT3B_Chat.Server"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WebSocket Server" Height="450" Width="800" Background="#7D26CD">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <ListBox x:Name="clientMessagesListBox" Grid.Row="0" Margin="10" Background="White" Foreground="Black" />
+
+        <ListBox x:Name="connectionActionsListBox" Grid.Row="1" Margin="10" Background="White" Foreground="Black" />
+   
     </Grid>
 </Window>
