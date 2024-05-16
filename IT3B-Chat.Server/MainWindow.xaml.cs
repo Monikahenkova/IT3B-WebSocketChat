@@ -8,56 +8,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WebSocketSharp.Server;
+//using WebSocketSharp.Server;
 
 namespace IT3B_Chat.Server
 {
- /// <summary>
- /// Interaction logic for MainWindow.xaml
- /// </summary>
- public partial class MainWindow : Window
- {
-        private WebSocketServer wsServer;
-
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
         public MainWindow()
-  {
-   InitializeComponent();
-  }
-        private void ConnectDisconnect_Click(object sender, RoutedEventArgs e)
         {
-            if (wsServer == null || !wsServer.IsListening)
-            {
-                
-                wsServer = new WebSocketServer(serverAddressTextBox.Text);
+            InitializeComponent();
 
-               
-                wsServer.AddWebSocketService<ChatBehavior>("/chat");
+            // Simulace příchozích zpráv a událostí připojení/odpojení klientů
+            MessageListBox.Items.Add("Zpráva od klienta 1: Ahoj!");
+            MessageListBox.Items.Add("Zpráva od klienta 2: Dobrý den!");
 
-                
-                wsServer.Start();
-                connectDisconnectButton.Content = "Odpojit";
-            }
-            else
-            {
-                
-                wsServer.Stop();
-                wsServer = null;
-                connectDisconnectButton.Content = "Připojit";
-            }
+            ConnectionListBox.Items.Add("Klient 1 připojen");
+            ConnectionListBox.Items.Add("Klient 2 připojen");
         }
 
-        
-        private void SendMessage_Click(object sender, RoutedEventArgs e)
-        {
-            if (wsServer != null && wsServer.IsListening)
-            {
-                wsServer.WebSocketServices.Broadcast(newMessageTextBox.Text);
-                newMessageTextBox.Text = ""; 
-            }
-            else
-            {
-                MessageBox.Show("Server není připojen.");
-            }
-        }
     }
 }

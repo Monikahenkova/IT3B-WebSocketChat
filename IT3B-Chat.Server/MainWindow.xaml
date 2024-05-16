@@ -7,23 +7,14 @@
         mc:Ignorable="d"
         Title="WebSocket Server" Height="450" Width="800" Background="#7D26CD">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="Zprávy od klientů:" FontWeight="Bold" Height="76" Width="777"/>
+            <ListBox x:Name="MessageListBox" Height="300"/>
+        </StackPanel>
 
-        <TextBox x:Name="serverAddressTextBox" Grid.Row="0" Margin="10" Background="White" Foreground="Black" Text="ws://localhost:8080" />
-
-        <Button x:Name="connectDisconnectButton" Grid.Row="1" Margin="10" Content="Připojit" Click="ConnectDisconnect_Click" Background="White" Foreground="Black" />
-
-        <ListBox x:Name="serverMessagesListBox" Grid.Row="2" Margin="10" Background="White" Foreground="Black" />
-
-        <TextBox x:Name="newMessageTextBox" Grid.Row="3" Margin="10" Background="White" Foreground="Black" />
-
-        <Button x:Name="sendMessageButton" Grid.Row="4" Margin="10" Content="Odeslat zprávu" Click="SendMessage_Click" Background="White" Foreground="Black" />
-
+        <StackPanel Margin="10,37,10,-17">
+            <TextBlock Text="Připojení/odpojení klientů:" FontWeight="Bold"/>
+            <ListBox x:Name="ConnectionListBox" Height="100"/>
+        </StackPanel>
     </Grid>
 </Window>
