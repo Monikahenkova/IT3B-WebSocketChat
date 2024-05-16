@@ -20,8 +20,21 @@ namespace IT3B_Chat.Client
   {
    InitializeComponent();
   }
-        private void SendMessage_Click(object sender, RoutedEventArgs e)
+        private void ConnectButton_Click(object sender, RoutedEventArgs e)
         {
+            string serverAddress = ServerAddressTextBox.Text;
+            MessageBox.Show($"Připojeno k serveru na adrese: {serverAddress}");
+        }
+
+        private void DisconnectButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Odpojeno od serveru");
+        }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            string newMessage = NewMessageTextBox.Text;
+            MessageBox.Show($"Odeslána zpráva: {newMessage}");
         }
     }
 }

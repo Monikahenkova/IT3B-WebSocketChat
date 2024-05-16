@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT3B_Chat.Server"
         mc:Ignorable="d"
-        Title="WebSocket Server" Height="450" Width="800" Background="#7D26CD">
+        Title="WebSocket Server" Height="450" Width="800" Background="CadetBlue">
     <Grid>
         <StackPanel Grid.Row="0" Margin="10">
             <TextBlock Text="Zprávy od klientů:" FontWeight="Bold" Height="76" Width="777"/>

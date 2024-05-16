@@ -5,19 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT3B_Chat.Client"
         mc:Ignorable="d"
-        Title="WebSocket Client" Height="450" Width="800" Background="#7D26CD">
+        Title="WebSocket Client" Height="450" Width="800" Background="CadetBlue">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+        <StackPanel Margin="10">
+            <TextBlock Text="Adresa serveru:" FontWeight="Bold"/>
+            <TextBox x:Name="ServerAddressTextBox" Margin="0 5 0 10"/>
+            <Button Content="Připojit" Click="ConnectButton_Click"/>
+            <Button Content="Odpojit" Click="DisconnectButton_Click" Margin="0 5 0 0"/>
+        </StackPanel>
 
-        <!-- TextBox pro zobrazení zpráv od serveru -->
-        <TextBox x:Name="serverMessagesTextBox" Grid.Row="0" Margin="10" Background="White" Foreground="Black" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+        <StackPanel Margin="10" Grid.Row="1">
+            <TextBlock Text="Zprávy ze serveru:" FontWeight="Bold" Width="211"/>
+            <ListBox x:Name="ServerMessageListBox" Height="200" Margin="0 5 0 0"/>
+        </StackPanel>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
-            <TextBox x:Name="messageTextBox" Width="600" Background="White" Foreground="Black" />
-            <Button Content="Odeslat" Click="SendMessage_Click" Background="White" Foreground="Black" />
+        <StackPanel Margin="10" Grid.Row="2">
+            <TextBlock Text="Zapsat novou zprávu:" FontWeight="Bold" Width="495"/>
+            <TextBox x:Name="NewMessageTextBox"/>
+            <Button Content="Odeslat" Click="SendButton_Click" Margin="0 5 0 0"/>
         </StackPanel>
     </Grid>
 </Window>
